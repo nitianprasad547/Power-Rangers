@@ -1,0 +1,313 @@
+/* --- Body & Background --- */
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("675502.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+    background-color: black;
+    color: white;
+    padding-bottom: 100px;
+}
+
+h3{
+    width: 70px;
+    background-color: rgb(255, 255, 223);
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+/* --- Header --- */
+.header {
+    background-color: rgb(18, 16, 16);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Thoda gap side se */
+    right: 20px;
+    padding: 0 15px;
+    border-radius: 35px;
+    z-index: 1000;
+    border: 1px solid rgb(50, 50, 50);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+
+
+.middle {
+    font-size: 22px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    
+
+    --colorA: rgb(234, 166, 39);
+    --colorB: rgb(132, 236, 132);
+
+    animation-name: changeColor;
+    animation-duration: 3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes changeColor {
+    0% { color: var(--colorA); }
+    50% { color: var(--colorB); }
+    100% { color: var(--colorA); }
+}
+
+
+.buttons {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.home-icon, .shop-icon, .setting-icon {
+    height: 25px;
+    filter: invert(1); 
+    transition: transform 0.2s;
+}
+
+.buttons:hover img {
+    transform: scale(1.2);
+}
+
+
+.search-container {
+    margin-top: 120px; 
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-text {
+    width: 300px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.5); 
+}
+
+.search-button {
+    background-color: rgb(223, 100, 43);
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: -45px; 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-image {
+    width: 20px;
+    filter: invert(1);
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+
+.season-card {
+    border: 2px solid rgb(223, 100, 43); 
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    width: 300px;
+}
+
+.season-card:hover {
+    box-shadow: 0px 0px 20px rgb(223, 100, 43);
+}
+
+.image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.season-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.season-card:hover .season-img {
+    transform: scale(1.1);
+}
+
+
+.season-card h3 {
+    margin: 10px 0 0 0;
+    color: rgb(234, 166, 39);
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .middle {
+        display: none;
+    }
+    .header {
+        justify-content: space-between;
+    }
+    .season-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+/* --- Footer Styling --- */
+.footer {
+    background-color: rgb(18, 16, 16); /* Header wala dark color */
+    color: white;
+    padding-top: 40px;
+    border-top: 3px solid rgb(223, 100, 43); /* Orange border upar */
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Mobile par neeche aayega */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.footer-col h3 {
+    color: rgb(234, 166, 39); /* Yellow/Orange Title */
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Title ke neeche choti line */
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: rgb(223, 100, 43);
+    height: 2px;
+    width: 50px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Links Styling */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: rgb(223, 100, 43);
+    padding-left: 8px; /* Hover karne par thoda right khiske */
+}
+
+/* Social Icons Styling */
+.social-links a {
+    display: inline-flex; /* Icon center karne ke liye */
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background-color: rgb(223, 100, 43);
+    transform: scale(1.1);
+}
+
+/* Bottom Copyright Section */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-col h3::after {
+        left: 50%; /* Line ko center karna */
+        transform: translateX(-50%);
+    }
+}
+    
+   
